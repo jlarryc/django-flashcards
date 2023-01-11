@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+
+{% block 'content' %}
+    <center>
+    <br>
+    <!-- <h1>Subtract</h1> -->
+
+    {% if my_answer %}
+    <div class="alert alert-{{ color }} alert-dismissible fade show" role="alert">
+      {{ my_answer }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endif %}
+    
+    <br>
+    <br>
+    <h1><img src="static/images/{{ num_1 }}.png" alt="nn.png"> - <img src="static/images/{{ num_2}}.png" alt="nn.png"></h1>
+    <!-- {{ answer }} -->
+    
+    <br/>
+    <!-- <form action="{% url 'subtract' %}" method="POST"> -->
+    <form action="{% url 'subtract' %}" method="POST">
+        {% csrf_token %}
+  <div class="mb-3">
+    <input type="text" class="form-control" placeholder="Type Your Answer Here" name="answer">
+    <input type="text" name="old_num_1" value="{{num_1}}">
+    <input type="text" name="old_num_2" value="{{num_2}}">    
+  </div>
+<!-- 
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+ -->  
+<!-- 
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+   -->
+    <br/>
+  <button type="submit" class="btn btn-secondary">Submit</button>
+</form>
+</center>    
+{% endblock %} -->
+
